@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const ProductModel = require('./product.schema')
 const database = require('./config')
+require('dotenv').config()
+
+
 
 database();
 

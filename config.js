@@ -5,7 +5,7 @@ const connectDB = async () => {
     try {
         // eslint-disable-next-line camelcase
         const DB_name = { dbname: 'Flow_music' };
-        await mongoose.connect('mongodb+srv://MukhtharAzeez:zPJm0DWYQP8iBJbC@cluster0.gtk0l6y.mongodb.net/arnx?retryWrites=true&w=majority', {
+        await mongoose.connect(process.env.MONGODB_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
