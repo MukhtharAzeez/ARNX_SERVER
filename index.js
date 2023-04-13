@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json());
 
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['https://main.d64uxgty9zsuu.amplifyapp.com'],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'HEAD', 'OPTIONS'],
     credentials: true,
 }));
@@ -44,4 +44,4 @@ app.post('/add-a-product',(req,res)=>{
     }
 })
 
-app.listen(4000)
+app.listen(5000)
