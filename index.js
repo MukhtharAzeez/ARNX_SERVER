@@ -4,17 +4,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const ProductModel = require('./product.schema')
+const database = require('./config')
 
-mongoose.connect('mongodb+srv://MukhtharAzeez:zPJm0DWYQP8iBJbC@cluster0.gtk0l6y.mongodb.net/arnx?retryWrites=true&w=majority',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+database();
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
-    console.log("Connected successfully");
-});
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json());
@@ -44,4 +37,4 @@ app.post('/add-a-product',(req,res)=>{
     }
 })
 
-app.listen(5000)
+app.listen(4500)
